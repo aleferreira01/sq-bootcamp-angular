@@ -27,6 +27,7 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
 import { TaskService } from './services/task.service';
 import { HttpClientModule } from '@angular/common/http';
 
+
 @NgModule({
   declarations: [AppComponent, AgendaComponent, AgendaTaskComponent, DialogAddTaskComponent],
   imports: [

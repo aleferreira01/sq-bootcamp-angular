@@ -8,7 +8,9 @@ import { TaskService } from '../services/task.service';
   templateUrl: './agenda-task.component.html',
   styleUrls: ['./agenda-task.component.scss']
 })
+
 export class AgendaTaskComponent implements OnInit {
+
   @Input() tasks: Task[] = [];
 
   constructor(private taskServe: TaskService) { }
@@ -23,4 +25,16 @@ export class AgendaTaskComponent implements OnInit {
   deleteTask(taskId: number | undefined) {
     this.taskServe.deleteTask(taskId).subscribe();
   }
+
+  isGreaterOrEqualReminderDate(date: Date): boolean{
+
+    const upComingDate = new Date();
+    upComingDate.setDate(upComingDate.getDate() + 2);
+
+    const taskDate = new Date(date);
+
+    return taskDate.getDate() >= upComingDate.getDate();
+
+  }
+
 }

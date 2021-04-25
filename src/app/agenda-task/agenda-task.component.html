@@ -1,13 +1,15 @@
 <ng-container *ngFor="let task of tasks">
   <section class="task">
     <div class="task-title">
-      <mat-checkbox
-        class="checkbox"
-        [(ngModel)]="task.done"
-        (change)="done(task, $event)">
+      <mat-checkbox class="checkbox" [(ngModel)]="task.done" (change)="done(task, $event)">
       </mat-checkbox>
       <span [ngClass]="{ 'task-done': task.done === true }">
         {{ task.title }}
+      </span>
+      <br>
+      <span class="reminder-date"
+      *ngIf="isGreaterOrEqualReminderDate(task.remindMe)">
+        {{ task.remindMe | date:'dd/MM/yyyy' }}
       </span>
     </div>
     <span class="spacer"></span>
