@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { DialogAddTaskComponent } from './dialog-add-task/dialog-add-task.component';
 
 @Component({
@@ -9,7 +10,7 @@ import { DialogAddTaskComponent } from './dialog-add-task/dialog-add-task.compon
 })
 export class AppComponent {
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog, public router: Router) {}
 
   openDialog() {
     this.dialog.open(DialogAddTaskComponent, {

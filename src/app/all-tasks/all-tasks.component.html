@@ -1,0 +1,10 @@
+<mat-accordion>
+
+  <mat-expansion-panel [expanded]="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Todas as tarefas
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <app-agenda-task [tasks]="todasAsTarefas" [flag]="flag"></app-agenda-task>
+  </mat-expansion-panel>

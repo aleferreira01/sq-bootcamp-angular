@@ -3,9 +3,15 @@
     <mat-icon>menu</mat-icon>
   </button>
   <mat-menu #menu="matMenu">
-    <a mat-menu-item [routerLink]="['/agenda']">
+    <a mat-menu-item [routerLink]="['/agenda']"
+    *ngIf="router.url != '/agenda'">
       <mat-icon>view_agenda</mat-icon>
       <span>Agenda</span>
+    </a>
+    <a mat-menu-item [routerLink]="['/tasks']"
+    *ngIf="router.url != '/tasks'">
+      <mat-icon>task</mat-icon>
+      <span>Todas as tarefas</span>
     </a>
   </mat-menu>
   <span>Minhas tarefas</span>
