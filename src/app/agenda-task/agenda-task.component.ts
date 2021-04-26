@@ -12,6 +12,7 @@ import { TaskService } from '../services/task.service';
 export class AgendaTaskComponent implements OnInit {
 
   @Input() tasks: Task[] = [];
+  @Input() flag: string = "";
 
   constructor(private taskServe: TaskService) { }
 
@@ -26,14 +27,17 @@ export class AgendaTaskComponent implements OnInit {
     this.taskServe.deleteTask(taskId).subscribe();
   }
 
-  isGreaterOrEqualReminderDate(date: Date): boolean{
+  isGreaterOrEqualReminderDate(date: Date): boolean {
 
     const upComingDate = new Date();
+    upComingDate.setHours(0,0,0,0);
     upComingDate.setDate(upComingDate.getDate() + 2);
 
     const taskDate = new Date(date);
+    taskDate.setHours(0,0,0,0);
 
-    return taskDate.getDate() >= upComingDate.getDate();
+    return taskDate.getTime() >= upComingDate.getTime() ||
+      this.flag === "all-task";
 
   }
 
