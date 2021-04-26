@@ -10,13 +10,13 @@
     </a>
     <a mat-menu-item [routerLink]="['/tasks']"
     *ngIf="router.url != '/tasks'">
-      <mat-icon>task</mat-icon>
+      <mat-icon>task_alt</mat-icon>
       <span>Todas as tarefas</span>
     </a>
   </mat-menu>
   <span>Minhas tarefas</span>
   <span class="example-spacer"></span>
-  <button mat-button (click)="openDialog()"><mat-icon>add_task</mat-icon> Adcionar tarefa</button>
+  <button mat-button (click)="openDialog()"><mat-icon>add_task</mat-icon> Adicionar tarefa</button>
 </mat-toolbar>
 
 <div class="mt-3 container">
